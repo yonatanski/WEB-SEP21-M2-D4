@@ -30,8 +30,136 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <title>Team Geanantor</title>
   </head>
   <body>
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center shadow-lg p-3 mt-4 bg-white rounded">
+            Team Geanantor
+          </h3>
+        </div>
+        <div class="col-8">
+
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+   
+        <form onsubmit="addName(event)">
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon1"
+              >
+                Add Name
+              </button>
+            </div>
+            <input
+             id="inputName"
+              type="text"
+              class="form-control"
+              placeholder="Write the name here..."
+              aria-label="Example text with button addon"
+              aria-describedby="button-addon1"
+            />
+          </form>
+          </div>
+        </div>
+          <div class="col-4">
+            <div class="input-group">
+              <input
+              id=""
+                type="number"
+                placeholder=""
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+              <div class="input-group-prepend mt-3 d-inline">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  id="button-addon1"
+                >
+                  Creat Team
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+        
+        <!--  -->
+        
+        <div class="col-12 mt-4">
+          <ul id="inputname-container" class="list-group">
+            <li class="list-group-item"> yoo</li>
+          
+          </ul>
+
+        </div>
+        <!-- Assign button  -->
+        <div class="col-12 mt-4">
+          <button type="button" class="btn btn-secondary">Assign Team</button>
+        </div>
+
+        <!-- Assign button  -->
+
+        <div class="col-12 mt-5">
+          <div id="teamlist"class="row">
+        
+           
+          </div>
+          <!-- <div class="col-3">
+            <h1>Team 2</h1>
+            <li class="list-group-item"> item</li>
+            <li class="list-group-item"> second item</li>
+            <li class="list-group-item">third item</li>
+            <li class="list-group-item"> fourth item</li>
+            <li class="list-group-item"> a fifth one</li>
+          </div>
+          <div class="col-3">
+            <h1>Team 3</h1>
+            <li class="list-group-item"> item</li>
+            <li class="list-group-item"> second item</li>
+            <li class="list-group-item">third item</li>
+            <li class="list-group-item"> fourth item</li>
+            <li class="list-group-item"> a fifth one</li>
+          </div> -->
+        </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      const inputName = document.querySelector("#inputName")
+      const teamInputContanier = document.querySelector("#inputname-container")
+      const 
+      function addName(event){
+        event.preventDefault()
+
+
+  const list =document.createElement("li")
+  list.classList.add("list-group-item")
+  list.innerHTML = inputName.value
+  teamInputContanier.appendChild(list)
+       
+      }
+      window.onload(){
+
+      }
+
+      function assignedTeamscreation(){
+        for (let i = 0; i < teamsN.innerHTML; i++) {
+                    teamsRow.innerHTML += `
+                        <div class="col-6 col-sm-3 team">
+                            <h4>Team ${i + 1}</h4>
+                            <ul class="list-group">
+                            </ul>
+                        </div>
+                    `
+      }
+    </script>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
