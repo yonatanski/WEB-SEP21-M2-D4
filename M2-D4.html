@@ -30,14 +30,14 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <title>Team Geanantor</title>
+    <title>Team  Generator</title>
   </head>
   <body>
     <div class="container mb-5">
       <div class="row">
         <div class="col-12">
           <h3 class="text-center shadow-lg p-3 mt-4 bg-white rounded">
-            Team Geanantor
+            Team  Generator
           </h3>
         </div>
         <div class="col-8">
@@ -68,7 +68,7 @@
           <div class="col-4">
             <div class="input-group">
               <input
-              id=""
+              id="NumberofTeams"
                 type="number"
                 placeholder=""
                 aria-label="Example text with button addon"
@@ -91,14 +91,14 @@
         
         <div class="col-12 mt-4">
           <ul id="inputname-container" class="list-group">
-            <li class="list-group-item"> yoo</li>
+            <li class="list-group-item text-center"> LIST OF NAME</li>
           
           </ul>
 
         </div>
         <!-- Assign button  -->
         <div class="col-12 mt-4">
-          <button type="button" class="btn btn-secondary">Assign Team</button>
+          <button type="button" class="btn btn-secondary d-inline-block">Assign Team</button>
         </div>
 
         <!-- Assign button  -->
@@ -133,7 +133,9 @@
     <script>
       const inputName = document.querySelector("#inputName")
       const teamInputContanier = document.querySelector("#inputname-container")
-      const 
+      const NumberofTeams = document.querySelector("NumberofTeams")
+      const teamlist = document.querySelector("teamlist")
+      
       function addName(event){
         event.preventDefault()
 
@@ -144,21 +146,22 @@
   teamInputContanier.appendChild(list)
        
       }
-      window.onload(){
+      // window.onload(){
 
-      }
+      // }
 
       function assignedTeamscreation(){
-        for (let i = 0; i < teamsN.innerHTML; i++) {
-                    teamsRow.innerHTML += `
+        for (let i = 0; i < NumberofTeams.innerHTML; i++) {
+          teamlist.innerHTML += `
                         <div class="col-6 col-sm-3 team">
                             <h4>Team ${i + 1}</h4>
-                            <ul class="list-group">
+                            <ul class="list-group-item">
                             </ul>
                         </div>
-                    `
+                    `}
       }
-    </script>
+    
+      </script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
