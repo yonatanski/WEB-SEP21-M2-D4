@@ -79,6 +79,7 @@
                   class="btn btn-outline-secondary"
                   type="submit"
                   id="button-addon1"
+                  onclick="assignedTeamscreation()"
                 >
                   Creat Team
                 </button>
@@ -133,8 +134,8 @@
     <script>
       const inputName = document.querySelector("#inputName")
       const teamInputContanier = document.querySelector("#inputname-container")
-      const NumberofTeams = document.querySelector("NumberofTeams")
-      const teamlist = document.querySelector("teamlist")
+      const NumberofTeams = document.getElementById("NumberofTeams").value;
+      const teamlist = document.querySelector("#teamlist")
       
       function addName(event){
         event.preventDefault()
@@ -146,12 +147,14 @@
   teamInputContanier.appendChild(list)
        
       }
-      // window.onload(){
-
-      // }
+      window.onload= function(){
+        console.log( NumberofTeams.value)
+        assignedTeamscreation()
+     
+      }
 
       function assignedTeamscreation(){
-        for (let i = 0; i < NumberofTeams.innerHTML; i++) {
+        for (let i = 0; i < NumberofTeams; i++) {
           teamlist.innerHTML += `
                         <div class="col-6 col-sm-3 team">
                             <h4>Team ${i + 1}</h4>
