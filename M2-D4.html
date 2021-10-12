@@ -57,6 +57,7 @@
             <input
              id="inputName"
               type="text"
+           
               class="form-control"
               placeholder="Write the name here..."
               aria-label="Example text with button addon"
@@ -69,6 +70,7 @@
             <div class="input-group">
               <input
               id="NumberofTeams"
+              value="4"
                 type="number"
                 placeholder=""
                 aria-label="Example text with button addon"
@@ -99,7 +101,7 @@
         </div>
         <!-- Assign button  -->
         <div class="col-12 mt-4">
-          <button type="button" class="btn btn-secondary d-inline-block">Assign Team</button>
+          <button type="button" class="btn btn-secondary d-inline-block" onclick="assign()">Assign Team</button>
         </div>
 
         <!-- Assign button  -->
@@ -134,8 +136,9 @@
     <script>
       const inputName = document.querySelector("#inputName")
       const teamInputContanier = document.querySelector("#inputname-container")
-      const NumberofTeams = document.getElementById("NumberofTeams").value;
+      const NumberofTeams = document.getElementById("NumberofTeams");
       const teamlist = document.querySelector("#teamlist")
+      
       
       function addName(event){
         event.preventDefault()
@@ -150,18 +153,28 @@
       window.onload= function(){
         console.log( NumberofTeams.value)
         assignedTeamscreation()
+        
      
       }
 
       function assignedTeamscreation(){
-        for (let i = 0; i < NumberofTeams; i++) {
+        for (let i = 0; i < NumberofTeams.value; i++) {
           teamlist.innerHTML += `
-                        <div class="col-6 col-sm-3 team">
+                        <div class="col-6 col-sm-3 teamasigend">
                             <h4>Team ${i + 1}</h4>
                             <ul class="list-group-item">
                             </ul>
                         </div>
                     `}
+      }
+      function assign(){
+              const person = teamInputContanier.children[0]
+              const teamassign = document.querySelector(".teamasigend")
+           
+              const random = Math.floor(Math.random()*teamassign.length)
+              teamassign[random].appendChild(person)
+              
+              console.log(person)
       }
     
       </script>
